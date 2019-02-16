@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
-import {getDayOfWeek,getWeatherKeyWord} from "../utilities";
+import {getDayOfWeek} from "../utilities";
 
 class WeatherWeek extends Component {
 
@@ -17,9 +17,9 @@ class WeatherWeek extends Component {
                       <div> <h3 >{day}</h3></div>
                       <div><img src={this.props.icon} alt="" /></div>
                      <div> <h5 >{this.props.temp} °C </h5></div>
-                      <div>  <h6 >
+                      <div>  <p >
                        {this.props.sum}
-                      </h6>
+                      </p>
                       </div>
           </WeekContainer>
     );

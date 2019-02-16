@@ -21,7 +21,7 @@ class WeatherDetail extends Component {
             <h6>HUMIDITY</h6>
             <h6>{this.props.humidity}%</h6>
           </HumidityContainer>
-         <Seperater></Seperater>
+         <Seperater><h2>|</h2></Seperater>
           <WindContainer>
             <h6>WIND</h6>
             <h6>{this.props.wind}K/m</h6>
@@ -44,7 +44,7 @@ const WeatherContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;    
-  padding:5%;  
+  /* padding:5%;   */
 `;
 
 const TempContainer = styled.div`
@@ -66,24 +66,24 @@ const OtherContainer = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 5%;
-  justify-content:flex-end;
+  justify-content:space-around;
   flex:2;
-  align-items:center;
+  align-items:flex-start;
   width:60%;
+  /* background-color:white; */
 `;
 const HumidityContainer = styled.div`
   color: #fff;
   flex:5;
-  margin:10px;
 `;
 
 const WindContainer = styled.div`
-  margin-left:20%;
+  margin-left:10%;
   color: #fff;
   flex:5;
 `;
 const Seperater = styled.div`
-  height: 60%;
+  height: 80%;
   width:2px;
-  background-color:white;
+  flex:1;
 `;

@@ -9,8 +9,8 @@ import { Button, Container, Row, Col } from "react-bootstrap";
 const HOST = "https://api.apixu.com/v1/forecast.json";
 const KEY = "f2dbda67de814bf8bf895350192301";
 const containerStyle = {
-  border: "solid 10px darkblue",
-  background: "darkblue"
+  //   border: "solid 10px darkblue",
+  //   background: "darkblue"
 };
 class WeatherPage extends Component {
   constructor() {
@@ -49,22 +49,24 @@ class WeatherPage extends Component {
     console.log("rendering" + data);
     return (
       <BackgroundContainer>
-        <div style={{ height: "5%" }} />
+        <div />
         {/* <BoardContainer> */}
         <Container style={containerStyle}>
           <TopContainer>
             <Row>
-              <Col xs={12} md={8}>
-                {data && data.current && (
-                  <WeatherDetail
-                    temp={data.current.temp_c}
-                    humidity={data.current.humidity}
-                    wind={data.current.wind_mph}
-                    condition={data.current.condition.text}
-                  />
-                )}
+              <Col xs={11} md={6}>
+                <DetailContainer>
+                  {data && data.current && (
+                    <WeatherDetail
+                      temp={data.current.temp_c}
+                      humidity={data.current.humidity}
+                      wind={data.current.wind_mph}
+                      condition={data.current.condition.text}
+                    />
+                  )}
+                </DetailContainer>
               </Col>
-              <Col xs={6} md={4}>
+              <Col xs={11} md={5}>
                 <CityContainer className="form-group">
                   <div>
                     {" "}
@@ -90,11 +92,14 @@ class WeatherPage extends Component {
           </TopContainer>
           <BottomContainer>
             <Row>
-              <Col xs={6} md={4}>
+              <Col xs={11} md={4}>
                 <WeatherTwitter city={this.state.city} />
               </Col>
-            
-                <Col xs={12} md={8}>
+              <Col xs={1} md={1}>
+              <Seperater/>
+              </Col>
+             
+              <Col xs={11} md={7}>
                 <WeekContainer>
                   {data &&
                     data.forecast.forecastday.map((day, id) => (
@@ -106,9 +111,8 @@ class WeatherPage extends Component {
                         sum={day.day.condition.text}
                       />
                     ))}
-                     </WeekContainer>
-                </Col>
-             
+                </WeekContainer>
+              </Col>
             </Row>
           </BottomContainer>
         </Container>
@@ -125,31 +129,26 @@ const BackgroundContainer = styled.div`
   height: 100%;
   width: 100%;
   position: absolute;
-  top: 0px;
-  bottom: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-const BoardContainer = styled.div`
-  height: 90%;
-  width: 90%;
-
-  top: 0px;
-  bottom: 0px;
-  background-color: darkblue;
-  border-radius: 10px;
+const DetailContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  min-height: 300px;
 `;
 
 const TopContainer = styled.div`
   flex: 1;
   color: white;
-  top: 0px;
+  background-color: darkblue;
+  margin-left: -2%;
+  margin-right: -2%;
+  margin-bottom: -2%;
+  border-radius: 15px;
 `;
 
 const CityContainer = styled.div`
@@ -164,33 +163,24 @@ const CityContainer = styled.div`
 `;
 
 const BottomContainer = styled.div`
-  /* height: 50%;
-  width: 100%;
-  margin-top: -5%; */
   background-color: #fff;
-  border-radius: 10px;
-  /* display: flex;
-  flex-direction: row;
-  flex: 1;
-  flex-shrink:1; */
+  border-radius: 0px 0px 10px 10px;
+  margin-left: -2%;
+  width: 104%;
+  margin-bottom: -1%;
   flex: 1;
 `;
-
-const TweetContainer = styled.div`
-  /* height: 300px; */
-  /* flex: 2; */
-`;
-
 const WeekContainer = styled.div`
-margin-top:10%;
+  margin-top: 10%;
   display: flex;
-  flex-direction: row; 
-
+  flex-direction: row;
 `;
 
 const Seperater = styled.div`
-  /* margin-top:5%;
-  height: 60%;
-  width:3px;
-  background-color:darkblue; */
+ 
+  height: 200px;
+  margin-top:50px;
+ 
+  width: 3px; 
+  background-color: darkblue;
 `;
