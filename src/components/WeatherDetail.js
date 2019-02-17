@@ -45,6 +45,10 @@ const TempContainer = styled.div`
   font-size: 50px;
   display: flex;
   text-align: center;
+  /* left:0px;
+  top:0px;
+  right:0px;
+  bottom: 0px; */
 `;
 const OtherContainer = styled.div`
   display: flex;

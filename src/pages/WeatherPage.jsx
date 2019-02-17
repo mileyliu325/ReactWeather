@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-// import "../bootstrap.css";
+
 import styled from "styled-components";
 import axios from "axios";
 import WeatherDetail from "../components/WeatherDetail";
 import WeatherWeek from "../components/WeatherWeek";
 import WeatherTwitter from "../components/WeatherTwitter";
-import { Button, Container, Row, Col } from "react-bootstrap";
+import {Container, Row, Col } from "react-bootstrap";
+
 const HOST = "https://api.apixu.com/v1/forecast.json";
 const KEY = "f2dbda67de814bf8bf895350192301";
 class WeatherPage extends Component {
@@ -121,7 +122,7 @@ export default WeatherPage;
 
 const BackgroundContainer = styled.div`
   background-image: linear-gradient(66deg, deeppink, purple, blue);
-  position: fixed;
+  position:absolute;
   min-width: 100%;
   min-height: 100%;
   display: flex;
