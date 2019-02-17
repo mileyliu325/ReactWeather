@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-// import "../bootstrap.css";
-
 class WeatherDetail extends Component {
   constructor(props) {
     super();
@@ -10,26 +8,24 @@ class WeatherDetail extends Component {
   render() {
     return (
       <WeatherContainer>
-        <TempContainer>
-           {this.props.temp} °C
-        </TempContainer>
-        <SumContainer>
+        <TempContainer>{this.props.temp} °C</TempContainer>
+        <div>
           <h4>{this.props.condition}</h4>
-        </SumContainer>
+        </div>
         <OtherContainer>
-          <HumidityContainer>
+          <div>
             <h6>HUMIDITY</h6>
             <h6>{this.props.humidity}%</h6>
-          </HumidityContainer>
-         <Seperater><h2>|</h2></Seperater>
-          <WindContainer>
+          </div>
+          <div>
+            <h2>|</h2>
+          </div>
+          <div>
             <h6>WIND</h6>
             <h6>{this.props.wind}K/m</h6>
-          </WindContainer>
+          </div>
         </OtherContainer>
-     
       </WeatherContainer>
-    
     );
   }
 }
@@ -37,53 +33,24 @@ class WeatherDetail extends Component {
 export default WeatherDetail;
 
 const WeatherContainer = styled.div`
-
-  height:100%;
-  width:100%;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;    
-  /* padding:5%;   */
-`;
-
-const TempContainer = styled.div`
-
-  font-size: 50px;
-  flex:5;
-  display:flex;
-  text-align: center; 
-
-`;
-
-const SumContainer = styled.div`
+  align-items: center;
   color: #fff;
-  flex:2;
-  display:flex;
+`;
+const TempContainer = styled.div`
+  font-size: 50px;
+  display: flex;
+  text-align: center;
 `;
 const OtherContainer = styled.div`
-
   display: flex;
   flex-direction: row;
   margin-top: 5%;
-  justify-content:space-around;
-  flex:2;
-  align-items:flex-start;
-  width:60%;
-  /* background-color:white; */
-`;
-const HumidityContainer = styled.div`
-  color: #fff;
-  flex:5;
-`;
-
-const WindContainer = styled.div`
-  margin-left:10%;
-  color: #fff;
-  flex:5;
-`;
-const Seperater = styled.div`
-  height: 80%;
-  width:2px;
-  flex:1;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 60%;
 `;

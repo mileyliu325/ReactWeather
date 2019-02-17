@@ -8,10 +8,6 @@ import WeatherTwitter from "../components/WeatherTwitter";
 import { Button, Container, Row, Col } from "react-bootstrap";
 const HOST = "https://api.apixu.com/v1/forecast.json";
 const KEY = "f2dbda67de814bf8bf895350192301";
-const containerStyle = {
-  //   border: "solid 10px darkblue",
-  //   background: "darkblue"
-};
 class WeatherPage extends Component {
   constructor() {
     super();
@@ -50,8 +46,8 @@ class WeatherPage extends Component {
     return (
       <BackgroundContainer>
         <div />
-        {/* <BoardContainer> */}
-        <Container style={containerStyle}>
+
+        <Container>
           <TopContainer>
             <Row>
               <Col xs={11} md={6}>
@@ -96,9 +92,9 @@ class WeatherPage extends Component {
                 <WeatherTwitter city={this.state.city} />
               </Col>
               <Col xs={1} md={1}>
-              <Seperater/>
+                <Seperater />
               </Col>
-             
+
               <Col xs={11} md={7}>
                 <WeekContainer>
                   {data &&
@@ -116,7 +112,6 @@ class WeatherPage extends Component {
             </Row>
           </BottomContainer>
         </Container>
-        {/* </BoardContainer> */}
       </BackgroundContainer>
     );
   }
@@ -126,9 +121,9 @@ export default WeatherPage;
 
 const BackgroundContainer = styled.div`
   background-image: linear-gradient(66deg, deeppink, purple, blue);
-  height: 100%;
-  width: 100%;
-  position: absolute;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,7 +143,7 @@ const TopContainer = styled.div`
   margin-left: -2%;
   margin-right: -2%;
   margin-bottom: -2%;
-  border-radius: 15px;
+  border-radius: 10px;
 `;
 
 const CityContainer = styled.div`
@@ -177,10 +172,8 @@ const WeekContainer = styled.div`
 `;
 
 const Seperater = styled.div`
- 
   height: 200px;
-  margin-top:50px;
- 
-  width: 3px; 
+  margin-top: 50px;
+  width: 3px;
   background-color: darkblue;
 `;

@@ -11,25 +11,25 @@ class WeatherTwitter extends Component {
 
   render() {
     return (
-        <Container>
-      <Timeline
-        dataSource={{
-          sourceType: "profile",
-          screenName: this.props.city
-        }}
-        options={{
-          username: "TwitterDev",
-          height: "300px",
-          width:"100%"        
-        }}
-        onLoad={() => console.log("Timeline is loaded!")}
-      />
+      <Container>
+        <Timeline
+          dataSource={{
+            sourceType: "profile",
+            screenName: this.props.city
+          }}
+          options={{
+            username: "TwitterDev",
+            height: "300px",
+            width: "100%"
+          }}
+          onLoad={() => console.log("Timeline is loaded!")}
+        />
       </Container>
     );
   }
 }
 const Container = styled.div`
-margin-left:5%;
-margin-top:5%;
-`
+  margin-left: 5%;
+  margin-top: 5%;
+`;
 export default WeatherTwitter;
