@@ -156,6 +156,7 @@ const CityContainer = styled.div`
   justify-content: center;
   color: white;
   text-decoration: underline;
+  padding:10px;
 `;
 
 const BottomContainer = styled.div`

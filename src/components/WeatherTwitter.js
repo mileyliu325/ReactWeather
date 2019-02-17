@@ -31,5 +31,6 @@ class WeatherTwitter extends Component {
 const Container = styled.div`
   margin-left: 5%;
   margin-top: 5%;
+  padding:5px;
 `;
 export default WeatherTwitter;
